@@ -251,6 +251,12 @@ function ImportJSONBasicAuth(url, username, password, query, parseOptions) {
   return ImportJSONAdvanced(url, header, query, parseOptions, includeXPath_, defaultTransform_);
 }
 
+function ImportAdAnalytics(params, apiKey, query, parseOptions) {
+  var url = "https://kiara.adtoniq.com/api/v2/analytics?" + params;
+  var header = {headers: {"X-ApiKey": apiKey}};
+  return ImportJSONAdvanced(url, header, query, parseOptions, includeXPath_, defaultTransform_);
+}
+
 /** 
  * Encodes the given value to use within a URL.
  *
